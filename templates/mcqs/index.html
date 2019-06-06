@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="content">
+    <div class="center-text">
+        You are now logged in! &#128540;
+    </div>
+
+</div>
+{% else %}
+<div class="content">
+    <div class="center-text">
+        Please <a href="{% url 'users:signin' %}">login</a> or <a href="{% url 'users:signup' %}">sign up</a> to use this beautiful memo!
+    </div>
+
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="content">
+    <div class="sign">
+        <div class='sign-form centered'>
+        <div class="form-header">
+            <button id="login">Login</button><!--
+         --><button id="signup">Sign Up</button>
+        </div>
+        <form class="centered" id="signin-form">
+            {% csrf_token %}
+            <div class="hr-sect">Login with Email</div>
+            <div id="login-error" class="error-message"></div>
+            <input type="text" name="email" id="login-email" placeholder="Enter Email Address">
+            <input type="password" id="login-password" name="password" placeholder="Enter Password">
+            <!-- <input type="submit" value="Login!"> -->
+            <button type="button" id="login-btn">Login!</button>
+        </form>
+        <form class="centered" id="signup-form">
+            {% csrf_token %}
+            <div class="hr-sect">Sign up with Email</div>
+            <div id="signup-error" class="error-message"></div>
+            <input type="text" name="email" id="signup-email" placeholder="Enter Email Address">
+            <input type="password" id="signup-password" name="password" placeholder="Enter Password">
+            <input type="password" name="confirm" placeholder="Confirm Password">
+            <!-- <input type="submit" value="Sign Up!"> -->
+            <button type="button" id="signup-btn">Sign Up!</button>
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+    {% if login %}
+    <script type="text/jscript">
+        $('#login').click();
+    </script>
+    {% endif %}
+    {% if signup %}
+    <script type="text/jscript">
+        $('#signup').click();
+    </script>
+    {% endif %}
+    {% load static %}
+    <script src="{% static 'js/ajax_auth.js' %}"></script>
+{% endblock %}

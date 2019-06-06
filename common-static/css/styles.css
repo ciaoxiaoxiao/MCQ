@@ -1,0 +1,184 @@
+:root {
+    --border-color: #e6e6e6;
+    --bg-color: white;
+    --complement: #fafafa;
+    --header-height: 80px;
+    --footer-height: 80px;
+}
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    font-weight: bold;
+    margin: 0px;
+    background-color: var(--bg-color);
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    height: 80px;
+}
+.content {
+    position: fixed;
+    top: var(--header-height);
+    bottom: var(--footer-height);
+    left: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: var(--border-color);
+    background-color: var(--bg-color);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-color);
+    height: 80px;
+}
+
+.greeting {
+    float: right;
+    line-height: 80px;
+    vertical-align: middle;
+    margin-right: 30px;
+    color: black;
+    font-size: 15px;
+}
+
+.greeting a,
+.greeting a:visited {
+    cursor: pointer;
+    margin-left: 15px;
+    text-decoration: none;
+    color:inherit;
+    font: inherit;
+    font-size: inherit;
+}
+
+.sign {
+    background-color: var(--complement);
+    height: 100%;
+}
+
+
+.sign-form {
+    width: 30%;
+}
+
+.form-header {
+    padding: 40px 0;
+
+}
+
+.form-header button, .sign-form input[type=submit]{
+    height: 60px;
+    display: inline-block;
+    width: 50%;
+    background-color: var(--bg-color);
+    border-width: 0 0 4px 0;
+    border-color: var(--bg-color);
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+/* .form-header button:focus, .form-header button:active{
+    height: 60px;
+    display: inline-block;
+    width: 50%;
+    background-color: var(--bg-color);
+    border-width: 0 0 4px 0;
+    border-color: #519e2e;
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: 0;
+    color: #519e2e;
+} */
+
+#signin-form, #signup-form {
+    display: none;
+}
+
+.sign-form input[type=text], .sign-form input[type=password] {
+    height: 60px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0 18px 0;
+    border: none;
+    background: var(--bg-color);
+}
+
+.sign-form input[type=text]:focus, .sign-form input[type=password]:focus {
+    /* background-color: #f1f1f1; */
+    outline: none;
+}
+
+.optinfo {
+    width: auto;
+}
+.optinfo hr {
+    align: center;
+    display: inline-block;
+    width: 10%;
+}
+.center-text {
+    text-align: center;
+    font-size: 20px;
+    color: lightgray;
+}
+
+.center-text a,
+.center-text a:visited{
+    text-decoration: underline;
+    color: inherit;
+}
+
+.hr-sect {
+	display: flex;
+    font-weight: normal;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	margin: 8px 0px;
+    font-size: 15px;
+}
+
+.hr-sect::before,
+.hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+.hr-sect::before {
+    margin: 0 8px 0 100px;
+}
+
+.hr-sect::after {
+    margin: 0 100px 0 8px;
+}
+
+.error-message {
+    margin-top:5px;
+    padding: 3px 0;
+    color: red;
+    font: inherit;
+    font-size: 10px;
+}

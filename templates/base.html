@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MCQS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="header">
+	    <div class="greeting">
+			{% if user.is_authenticated %}
+			<span style="color: red">坚持 努力 加油！</span>
+			<span>Hi, {{user.email}}!</span>
+			<a href="{% url 'mcq:settings' %}">Settings</a>
+			<a href="{% url 'users:logout' %}">Logout</a>
+			{% else %}
+	        <span>Welcome!</span>
+	        <a href="{% url 'users:signin' %}">Login</a>
+	        <a href="{% url 'users:signup' %}">Sign Up</a>
+			{% endif %}
+	    </div>
+	</div>
+    {% block content %}
+    {% endblock %}
+
+	<div class="footer">
+		<div class="center-text">
+	        This is a temporary footer!
+	    </div>
+	</div>
+
+	<script src="{% static 'js/base.js' %}"></script>
+
+	{% block script %}
+    {% endblock %}
+</body>
